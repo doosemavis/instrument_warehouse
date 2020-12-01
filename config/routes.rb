@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :instruments
   devise_for :users, :controllers => {:registrations => "registrations", :omniauth_callbacks => "callbacks"}
   #change the route from /users/login to /login route
