@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_224313) do
+ActiveRecord::Schema.define(version: 2020_12_01_172634) do
+
+  create_table "instruments", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.integer "weight"
+    t.text "description"
+    t.integer "user_id"
+    t.integer "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -26,6 +37,8 @@ ActiveRecord::Schema.define(version: 2020_11_30_224313) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
