@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'application#welcome'
+  
   resources :categories
   resources :instruments
   
