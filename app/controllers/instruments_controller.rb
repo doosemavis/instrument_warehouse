@@ -8,9 +8,12 @@ class InstrumentsController < ApplicationController
     end 
 
     def new
-    end 
+        @instrument = Instrument.new(user_id: params[:id])
+    end
 
     def create
+        @instrument = current_user.instrument.build(instrument_params)
+        render :new
     end 
 
     def edit 
