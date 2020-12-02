@@ -18,8 +18,13 @@ class InstrumentsController < ApplicationController
     end
 
     def create
-        @instrument = current_user.instrument.build(instrument_params)
-        render :new
+        @instrument = current_user.instruments.build(instrument_params)
+        
+        if @instrument.save
+            redirect_to @instrument
+        else
+            render :new 
+        end 
     end 
 
     def edit 

@@ -4,5 +4,6 @@
 <% @instruments.each do |i| %>
     <%= link_to i.name, instrument_path(i) %>
 <% end %>
-
-<%= button_to "Add Instrument",  new_category_instrument_path %>
+<br>
+<br>
+<button> <%= link_to "Add Instrument",  new_category_instrument_path %> </button>
