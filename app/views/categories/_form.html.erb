@@ -3,5 +3,5 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
 
-    <%= f.submit @category.persisted? %>
+    <%= f.submit @category.persisted? ? "Update Category" : "Add Category" %>
 <% end %>
