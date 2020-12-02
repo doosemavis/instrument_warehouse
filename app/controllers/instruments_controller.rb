@@ -10,7 +10,7 @@ class InstrumentsController < ApplicationController
     end 
 
     def show
-        @instrument = current_user.instruments
+        @instrument = current_user.instruments.find_by(id: params[:id])
     end 
 
     def new
