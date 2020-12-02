@@ -5,7 +5,9 @@ class CategoriesController < ApplicationController
         @categories = Categories.all
     end
 
-    def show 
+    def show
+        @category = Category.find_by(id: params[:id])
+        render :show
     end 
 
     def new
