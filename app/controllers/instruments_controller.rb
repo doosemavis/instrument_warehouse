@@ -1,8 +1,12 @@
 class InstrumentsController < ApplicationController
     before_action :authenticate_user!
-    
+
     def index 
-        @instruments = current_user.instruments
+        if params[:category_id]
+            @instruments = current_user.instruments.where(category_id: params[:category_id])
+        else 
+            @instruments = current_user.instruments
+        end 
     end 
 
     def show

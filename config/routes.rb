@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   
   resources :categories
   resources :instruments
+
+  resources :categories do 
+    resources :instruments
+  end 
   
   #change the route from /users/login to /login route
   devise_scope :user do 
