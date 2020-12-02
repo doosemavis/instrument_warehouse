@@ -1,0 +1,16 @@
+<%= form_for @instrument do |f| %>
+  
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.submit @instrument.persisted? %>
+<% end %>
