@@ -10,6 +10,7 @@ class InstrumentsController < ApplicationController
     end 
 
     def show
+        @instrument = current_user.instruments
     end 
 
     def new

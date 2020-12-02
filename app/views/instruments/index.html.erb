@@ -2,6 +2,6 @@
 <h2>My Instruments: </h2>
 
 <% @instruments.each do |i| %>
-    <%= link_to i.name, instruments_path(i) %>
+    <%= link_to i.name, instrument_path(i) %>
 <% end %>
 
