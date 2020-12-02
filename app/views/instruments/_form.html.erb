@@ -1,21 +1,22 @@
 <%= form_for(@instrument) do |f| %>
   
-    <%= f.label :name %>
+    <%= f.label "Instrument" %>
     <%= f.text_field :name %>
-
+    <br>
     <%= f.label :price %>
     <%= f.text_field :price %>
-
+    <br>
     <%= f.label :weight %>
     <%= f.text_field :weight %>
-
+    <br>
     <%= f.label :description %>
     <%= f.text_field :description %>
 
-   <%= f.fields_for :category, Category.new do |instrument_category| %>
-        <%= instrument_category.label "Instrument Name" %>
-        <%= instrument_category.text_field :name %>
-    <% end %>
 
     <%= f.submit @instrument.persisted? %>
 <% end %>
+
+   <%# f.fields_for :category, Category.new do |instrument_category| %>
+        <%# instrument_category.label "Instrument Name" %>
+        <%# instrument_category.text_field :name %>
+    <%# end %>
