@@ -1,5 +1,6 @@
 class InstrumentsController < ApplicationController
-
+    before_action :authenticate_user!
+    
     def index 
         @instruments = current_user.instruments
     end 
