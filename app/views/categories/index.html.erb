@@ -1,16 +1,10 @@
 
 <h2>My Categories: </h2>
 
-<table>
-    <tbody>
-        <tr>
-            <% @categories.each do |c| %>
-                <td><%= link_to c.name, category_instruments_path(c) %></td>
-            <% end %>
-        </tr>
-    </tbody>
-</table>
-<br>
-<br>
 
+    <% @categories.each do |c| %>
+        <%= link_to c.name, category_instruments_path(c) %><br>
+    <% end %>
+<br>
+<br>
 <button><%= link_to "Add Category", new_category_path %></button>

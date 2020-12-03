@@ -22,9 +22,9 @@
        <p> Select from an exisiting category
         <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "Choose Category"  %></p>
         <p> or create a new one =>
-        <%= f.fields_for :category, Category.new do |instrument_category| %>
-        <%= instrument_category.label "Category" %>
-        <%= instrument_category.text_field :name %>
+        <%= f.fields_for :category, @instrument.build_category do |instrument_category| %>
+            <%= instrument_category.label "Category" %>
+            <%= instrument_category.text_field :name %>
         <% end %></p>
     <% end %>
     <%= f.submit  %>

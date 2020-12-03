@@ -1,4 +1,8 @@
-<h2>My Instruments: </h2>
+<% if @category %>
+    <h2>My <%= @category.name %> Instruments: </h2>
+<% else %>
+    <h2>My Instruments: </h2>
+<% end %>
 
 <% @instruments.each do |i| %>
     <%= link_to i.name, instrument_path(i) %><br>

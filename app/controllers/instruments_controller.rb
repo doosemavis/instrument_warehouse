@@ -16,7 +16,12 @@ class InstrumentsController < ApplicationController
     end 
 
     def new
-        @instrument = Instrument.new(user_id: params[:id])
+        if params[:category_id]
+            @category = current_user.categories.find_by(id: params[:category_id])
+            @instrument = current_user.instruments.build(category_id: params[:category_id])
+        else 
+            @instrument = current_user.instruments.build
+        end 
     end
 
     def create
