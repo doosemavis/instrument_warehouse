@@ -21,13 +21,11 @@
     <% else %>
        <p> Select from an exisiting category
         <%= f.collection_select :category_id, Category.all, :id, :name %></p>
-        <p> or create a new one </p>
+        <p> or create a new one =>
         <%= f.fields_for :category, Category.new do |instrument_category| %>
         <%= instrument_category.label "Category" %>
         <%= instrument_category.text_field :name %>
-        <% end %>
+        <% end %></p>
     <% end %>
-    <br>
-    <br>
     <%= f.submit  %>
 <% end %>
