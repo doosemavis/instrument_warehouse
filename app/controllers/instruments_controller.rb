@@ -29,10 +29,18 @@ class InstrumentsController < ApplicationController
         end 
     end 
 
-    def edit 
+    def edit
+        @instrument = Instrument.find_by(id: params[:id])
     end 
 
     def update
+        @instrument = current_user.instruments.update(instrument_params)
+
+        if @instrument
+            redirect_to instrument_path
+        else 
+            render :edit
+        end 
     end 
 
     def delete
