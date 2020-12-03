@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
         @category = current_user.categories.build(category_params)
 
         if @category.save
-            redirect_to @category
+            redirect_to categories_path
         else
             render :new
         end 
