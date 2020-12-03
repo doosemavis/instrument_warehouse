@@ -3,3 +3,5 @@
 <p>Weight: <%= @instrument.weight %></p>
 <p>Description: <%= @instrument.description %></p>
 
+ <button><%= link_to "Edit Instrument",  edit_instrument_path(@instrument) %></button>
+<button><%= link_to "Delete Instrument",  instruments_path %></button>

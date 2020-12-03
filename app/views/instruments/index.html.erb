@@ -1,14 +1,13 @@
-
 <h2>My Instruments: </h2>
 
 <% @instruments.each do |i| %>
     <%= link_to i.name, instrument_path(i) %>
 <% end %>
-<br><br>
-
+<br>
+<br>
 <% if @category %>
     <button><%= link_to "Add Instrument",  new_category_instrument_path(@category) %></button>
 <% else %>
-   <button><%= link_to "Add Instrument",  new_instrument_path %></button>
+    <button><%= link_to "Add Instrument",  new_instrument_path %></button>
 <% end %>
 
