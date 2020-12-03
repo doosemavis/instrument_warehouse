@@ -1,4 +1,6 @@
 <h3>Create Instrument: </h3>
+<hr>
+<h4>Instrument Info: </h4>
 
 <%= form_for(@instrument) do |f| %>
   
@@ -16,6 +18,7 @@
     <br>
 
 
+<h4>Category Info: </h4>
     <% if @category %>
         <%= f.hidden_field :category_id %>
     <% else %>
