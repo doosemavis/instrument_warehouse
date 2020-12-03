@@ -43,7 +43,10 @@ class InstrumentsController < ApplicationController
         end 
     end 
 
-    def delete
+    def destroy
+        @instrument = current_user.instruments.destroy
+        
+        redirect_to instruments_path
     end 
 
 
