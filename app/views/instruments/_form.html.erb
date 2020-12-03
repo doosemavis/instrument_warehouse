@@ -20,7 +20,7 @@
         <%= f.hidden_field :category_id %>
     <% else %>
        <p> Select from an exisiting category
-        <%= f.collection_select :category_id, Category.all, :id, :name %></p>
+        <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %></p>
         <p> or create a new one =>
         <%= f.fields_for :category, Category.new do |instrument_category| %>
         <%= instrument_category.label "Category" %>

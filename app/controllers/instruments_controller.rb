@@ -44,7 +44,11 @@ class InstrumentsController < ApplicationController
     end 
 
     def destroy
-        @instrument = current_user.instruments.destroy
+        @instrument = current_user.instruments.find_by(id: params[:id])
+        
+        if @instrument
+            @instrument.destroy 
+        end 
         
         redirect_to instruments_path
     end 
