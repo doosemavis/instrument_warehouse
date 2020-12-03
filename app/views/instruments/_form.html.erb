@@ -18,17 +18,17 @@
 
     <% if @category %>
         <%= f.hidden_field :category_id %>
-     pass through category_id as hiddenfield 
     <% else %>
-     select from an exisiting
-     <% f.collection_select :category_id, Category.all, :id, :name %>
-     or 
-        <%# f.fields_for :category, Category.new do |instrument_category| %>
-        <%# instrument_category.label "Category" %>
-        <%# instrument_category.text_field :name %>
-        <%# end %>
+       <p> Select from an exisiting category
+        <%= f.collection_select :category_id, Category.all, :id, :name %>
+        </p>
+     or create a new one
+        <%= f.fields_for :category, Category.new do |instrument_category| %>
+        <%= instrument_category.label "Category" %>
+        <%= instrument_category.text_field :name %>
+        <% end %>
     <% end %>
     
 
-    <%= f.submit @instrument.persisted? %>
+    <%= f.submit  %>
 <% end %>
