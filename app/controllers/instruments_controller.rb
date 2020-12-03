@@ -20,8 +20,9 @@ class InstrumentsController < ApplicationController
     end
 
     def create
+        # binding.pry
         @instrument = current_user.instruments.build(instrument_params)
-        
+        # binding.pry
         if @instrument.save
             redirect_to @instrument
         else
@@ -49,7 +50,7 @@ class InstrumentsController < ApplicationController
         if @instrument
             @instrument.destroy 
         end 
-        
+
         redirect_to instruments_path
     end 
 
