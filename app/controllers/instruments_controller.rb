@@ -5,6 +5,7 @@ class InstrumentsController < ApplicationController
 
         if params[:category_id]
             @instruments = current_user.instruments.where(category_id: params[:category_id])
+            @category = current_user.categories.find_by(id: params[:category_id])
         else 
             @instruments = current_user.instruments
         end 

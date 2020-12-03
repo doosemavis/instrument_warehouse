@@ -5,4 +5,10 @@
     <%= link_to i.name, instrument_path(i) %>
 <% end %>
 <br><br>
-<button><%= link_to "Add Instrument",  new_category_instrument_path(@instruments) %></button>
+
+<% if @category %>
+    <button><%= link_to "Add Instrument",  new_category_instrument_path(@category) %></button>
+<% else %>
+   <button><%= link_to "Add Instrument",  new_instrument_path %></button>
+<% end %>
+

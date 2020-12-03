@@ -4,5 +4,7 @@
 <% @categories.each do |c| %>
     <%= link_to c.name, category_instruments_path(c) %>
 <% end %>
-<br><br>
+<br>
+<br>
+
 <button><%= link_to "Add Category", new_category_path %></button>
