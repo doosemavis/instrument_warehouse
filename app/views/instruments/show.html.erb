@@ -1,9 +1,8 @@
-<hr>
 <h3><%= @instrument.name %></h3>
 <p>Price: <%= @instrument.price %></p>
 <p>Weight: <%= @instrument.weight %></p>
 <p>Description: <%= @instrument.description %></p>
 <p>Category: <%= @instrument.category.name %></p>
 
-<button><%= link_to "Edit Instrument",  edit_instrument_path %></button>
-<button><%= link_to "Delete Instrument",  @instrument, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+<%= link_to "Edit Instrument",  edit_instrument_path, class: "btn btn-secondary btn-sm text-white" %>
+<%= link_to "Delete Instrument",  @instrument, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary btn-sm text-white" %>

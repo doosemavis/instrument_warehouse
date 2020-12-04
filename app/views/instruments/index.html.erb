@@ -12,15 +12,12 @@
 <br>
 <br>
 <% if @category %>
-    <button><%= link_to "Add Instrument",  new_category_instrument_path(@category) %></button>
+   <%= link_to "Add Instrument",  new_category_instrument_path(@category), class: "btn btn-secondary btn-sm text-white" %>
 <% else %>
-    <button><%= link_to "Add Instrument",  new_instrument_path %></button>
+    <%= link_to "Add Instrument",  new_instrument_path, class: "btn btn-secondary btn-sm text-white" %>
 <% end %>
-<br>
-<br>
-<button><%= link_to 'Heavy Instruments', '/instruments/search_term/heavy' %></button>
-<br>
-<br>
-<button><%= link_to 'Expensive Instruments', '/instruments/search_term/expensive' %></button>
+
+<%= link_to 'Heavy Instruments', '/instruments/search_term/heavy', class: "btn btn-secondary btn-sm text-white" %>
+<%= link_to 'Expensive Instruments', '/instruments/search_term/expensive', class: "btn btn-secondary btn-sm text-white" %>
 
 
