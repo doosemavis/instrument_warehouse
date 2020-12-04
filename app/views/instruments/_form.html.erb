@@ -2,16 +2,19 @@
 <hr>
 <h4>Instrument Info: </h4>
 
+
 <%= form_for(@instrument) do |f| %>
-    <% if @instrument.errors.any? %>
-        <h3>Errors:</h3>
-        <ul>
-            <% @instrument.errors.full_messages.each do |m| %>
-             <li><%= m %></li>
-             <% end %>
-        </ul>
-    <% end %>
-  
+    <div class="field_with_errors">
+        <% if @instrument.errors.any? %>
+            <h3>Errors:</h3>
+            <ul>
+                <% @instrument.errors.full_messages.each do |m| %>
+                <li><%= m %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
+
     <%= f.label "Instrument" %>
     <%= f.text_field :name %>
     <br>
