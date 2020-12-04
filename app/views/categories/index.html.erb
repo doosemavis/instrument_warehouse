@@ -2,6 +2,6 @@
 <h2>My Categories: </h2>
 
 <% @categories.each do |c| %>
-    <%= link_to c.name, category_instruments_path(c) %><br>
+    <%= link_to c.name, category_instruments_path(c, @instrument) %><br>
 <% end %>
 

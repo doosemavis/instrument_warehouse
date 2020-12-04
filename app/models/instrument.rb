@@ -1,7 +1,7 @@
 class Instrument < ApplicationRecord
     belongs_to :user
     belongs_to :category
-    validates :name, :price, :weight, :description, presence: true
+    validates :name, :price, :weight, presence: true
     validates :name, uniqueness: true
     scope :heavy, -> { where("weight > 100") }
     scope :expensive, -> { where("price > 500") }
