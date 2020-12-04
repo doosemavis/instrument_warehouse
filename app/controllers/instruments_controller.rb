@@ -8,12 +8,10 @@ class InstrumentsController < ApplicationController
             @category = current_user.categories.find_by(id: params[:category_id])
         elsif params[:search_term]
             if params[:search_term] = "heavy"
-                @instruments = current_user.instruments.heavy 
-            end
-        elsif params[:search_term]
-            if params[:search_term] = "expensive"
+                @instruments = current_user.instruments.heavy
+            else params[:search_term] = "expensive"
                 @instruments = current_user.instruments.expensive
-            end 
+            end
         else 
             @instruments = current_user.instruments
         end 
