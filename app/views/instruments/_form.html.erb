@@ -1,4 +1,9 @@
-<h3>Create Instrument: </h3>
+
+<% if @category %>
+  <h3>Create <%= @category.name %> Instrument: </h3>
+<% else %>
+    <h3>Create Instrument: </h3>
+<% end %>
 <hr>
 <h4>Instrument Info: </h4>
 
@@ -29,13 +34,13 @@
     <br>
 
 
-<h4>Category Info: </h4>
     <% if @category %>
         <%= f.hidden_field :category_id %>
     <% else %>
-       <p> Select from an exisiting category
+        <h4>Category Info: </h4>
+        <p> Select from an exisiting category
         <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "Choose Category"  %></p>
-        <p> or create a new one =>
+        <p> or create a new one <br>
         <%= f.fields_for :category, @instrument.build_category do |instrument_category| %>
             <%= instrument_category.label "Category" %>
             <%= instrument_category.text_field :name %>

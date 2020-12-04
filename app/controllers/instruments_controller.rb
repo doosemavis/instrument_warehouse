@@ -2,9 +2,18 @@ class InstrumentsController < ApplicationController
     before_action :authenticate_user!
 
     def index 
+        # binding.pry
         if params[:category_id]
             @instruments = current_user.instruments.where(category_id: params[:category_id])
             @category = current_user.categories.find_by(id: params[:category_id])
+        elsif params[:search_term]
+            if params[:search_term] = "heavy"
+                @instruments = current_user.instruments.heavy 
+            end
+        elsif params[:search_term]
+            if params[:search_term] = "expensive"
+                @instruments = current_user.instruments.expensive
+            end 
         else 
             @instruments = current_user.instruments
         end 
@@ -39,8 +48,9 @@ class InstrumentsController < ApplicationController
     end 
 
     def update
-        @instrument = current_user.instruments.update(instrument_params)
-
+        @instrument = current_user.instruments.find_by(id: params[:id])
+        @instrument.update(category_id: instrument_params[:category_id], name: instrument_params[:name], price: instrument_params[:price], weight: instrument_params[:weight], description: instrument_params[:description])
+    
         if @instrument
             redirect_to instrument_path
         else 
@@ -56,7 +66,7 @@ class InstrumentsController < ApplicationController
         end 
 
         redirect_to instruments_path
-    end 
+    end
 
 
     private 
