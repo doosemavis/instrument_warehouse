@@ -3,7 +3,9 @@ class Instrument < ApplicationRecord
     belongs_to :category
     validates :name, :price, :weight, :description, presence: true
     validates :name, :description, uniqueness: true
-
+    scope :heavy, -> { where("weight > 100") }
+    scope :expensive, -> { where("price > 500") }
+ 
     # accepts_nested_attributes_for :category, reject_if: :all_blank
 
 
