@@ -2,7 +2,6 @@ class InstrumentsController < ApplicationController
     before_action :authenticate_user!
 
     def index 
-        # binding.pry
         if params[:category_id]
             @instruments = current_user.instruments.where(category_id: params[:category_id])
             @category = current_user.categories.find_by(id: params[:category_id])
@@ -31,9 +30,8 @@ class InstrumentsController < ApplicationController
     end
 
     def create
-        # binding.pry
         @instrument = current_user.instruments.build(instrument_params)
-        # binding.pry
+       
         if @instrument.save
             redirect_to @instrument
         else
@@ -47,7 +45,13 @@ class InstrumentsController < ApplicationController
 
     def update
         @instrument = current_user.instruments.find_by(id: params[:id])
-        @instrument.update(category_id: instrument_params[:category_id], name: instrument_params[:name], price: instrument_params[:price], weight: instrument_params[:weight], description: instrument_params[:description])
+        @instrument.update(
+            category_id: instrument_params[:category_id], 
+            name: instrument_params[:name], 
+            price: instrument_params[:price], 
+            weight: instrument_params[:weight], 
+            description: instrument_params[:description]
+        )
     
         if @instrument
             redirect_to instrument_path
