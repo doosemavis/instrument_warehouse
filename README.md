@@ -1,5 +1,5 @@
 # Instrument Warehouse
-Welcome to Kombucha Records, a web application where users are given the ability to signup and login, with a thrid party authentication system, to create and update their records kombuchas they've added.  
+Welcome to the Instrument Warehouse, a web application where users are given the ability to signup and login, with a thrid party authentication system, to create and update instruments a particular user may play, own or use on a regular basis.  
 
 ## Installation Requirements
 In order to run this application you will need to install the necessary gems and clone this repository and run the following lines in your terminal:
