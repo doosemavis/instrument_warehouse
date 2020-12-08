@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   root to: 'application#welcome'
   get 'instruments/search_term/:search_term', to: 'instruments#index'
 
-
-
   resources :categories
   resources :instruments
 

@@ -20,30 +20,25 @@
         <% end %>
     </div>
 
-    <%= f.label "Instrument" %>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-    <br>
-    <%= f.label :weight %>
-    <%= f.text_field :weight %>
-    <br>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    <br>
-
+    <%= f.text_field :name, placeholder: "Instrument" %>
+    <br><br>
+    <%= f.text_field :price, placeholder: "Price" %>
+    <br><br>
+    <%= f.text_field :weight, placeholder: "Weight" %>
+    <br><br>
+    <%= f.text_field :description, placeholder: "Description" %>
+    <hr>
+    
 
     <% if @category %>
         <%= f.hidden_field :category_id %>
     <% else %>
         <h4>Category Info: </h4>
-        <p> Select from an exisiting category
-        <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "Choose Category"  %></p>
-        <p> or create a new one <br>
+        <p> Select from an exisiting category <br><br>
+        <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "Choose Category"  %></p><br>
+        <p> OR create a new one <br><br>
         <%= f.fields_for :category, @instrument.build_category do |instrument_category| %>
-            <%= instrument_category.label "Category" %>
-            <%= instrument_category.text_field :name %>
+            <%= instrument_category.text_field :name, placeholder: "Category" %>
         <% end %></p>
     <% end %>
     <%= f.submit class: "btn btn-secondary btn-sm text-white" %>
