@@ -28,10 +28,10 @@ class InstrumentsController < ApplicationController
             @instrument = current_user.instruments.build
         end 
     end
-
+ 
     def create
         @instrument = current_user.instruments.build(instrument_params)
-       
+        
         if @instrument.save
             redirect_to @instrument
         else
