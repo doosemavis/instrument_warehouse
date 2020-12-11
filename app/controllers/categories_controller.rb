@@ -23,6 +23,9 @@ class CategoriesController < ApplicationController
         end 
     end
 
+    def inexpensive_drums
+        @drums = current_user.instruments.inexpensive
+    end 
 
     private 
 

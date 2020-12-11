@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations", :omniauth_callbacks => "callbacks"}
   root to: 'application#welcome'
   get 'instruments/search_term/:search_term', to: 'instruments#index'
+  get 'category/inexpensive_drums', to: 'categories#inexpensive_drums'
 
   resources :categories
   resources :instruments
