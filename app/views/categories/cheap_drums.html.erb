@@ -1,0 +1,5 @@
+<h2>Cheap Drums: </h2>
+
+<% @instruments.each do |i| %>
+  <%= link_to i.name, 'instruments/search_term/inexpensive_drums'(i) %><br>
+<% end %>

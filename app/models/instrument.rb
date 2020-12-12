@@ -5,7 +5,7 @@ class Instrument < ApplicationRecord
     validates :name, uniqueness: true
     scope :heavy, -> { where("weight > 100") }
     scope :expensive, -> { where("price > 500") }
-    scope :inexpensive, -> { where("price < 1000") }
+    scope :cheap, -> { where("price < 1000") }
     # accepts_nested_attributes_for :category, reject_if: :all_blank
 
     def category_attributes=(attribute_hash)

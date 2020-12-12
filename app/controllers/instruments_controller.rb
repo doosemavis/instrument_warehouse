@@ -70,6 +70,9 @@ class InstrumentsController < ApplicationController
         redirect_to instruments_path
     end
 
+    def cheap_drums
+        @instruments = current_user.instruments.cheap
+    end 
 
     private 
 
