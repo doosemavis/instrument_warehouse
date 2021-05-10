@@ -14,23 +14,20 @@
  *= require_self
  */
 
- /* input#user_email {
-     width: 100%;
- }
+body {
+    background-color: #18A2B8;
+}
 
- input#user_password {
-     width: 100%;
- } */
-
- div .input_field input {
+div .input_field input {
     width: 100%;
- }
+}
 
- div .input_field label {
+div .input_field label {
     float: right;
- }
+    font-weight: bold;
+}
 
- div .submit-btn {
+div .submit-btn {
     float: right; 
 }
 
@@ -38,13 +35,44 @@ div #login-form-border {
     position: relative;
     top: 100px;
     text-align: left;
-    background-color:#d1d8e0;
+    background-color: #ff9933;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-right: 25px;
     padding-left: 25px;
+
+    border-radius: 25px;
+    padding: 20px;
 }
 
 div .remember-me-checkbox {
     text-align: right;
+    font-weight: bold;
+}
+
+div #signup-form {
+    position: relative;
+    top: 100px;
+    text-align: left;
+    background-color: #ff9933;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+
+    border-radius: 25px;
+    padding: 20px;
+}
+
+div .field input {
+    width: 100%;
+}
+
+div .field label {
+    float: right;
+    font-weight: bold;
+}
+
+div .actions input {
+    float: right;
 }
