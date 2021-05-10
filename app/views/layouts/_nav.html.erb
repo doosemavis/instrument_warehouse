@@ -12,10 +12,12 @@
             <% else %>
                 <li><%= link_to 'Categories', categories_path, class: "nav-link text-black-50" %></li>
                 <li><%= link_to 'Instruments', instruments_path, class: "nav-link text-black-50" %></li>
-                <li> <%= link_to 'For Drummmers', 'category/search_term/inexpensive_drums' %></li>
+                    <% link_to 'For Drummmers', 'category/search_term/inexpensive_drums' %>
                 <li><%= link_to 'Logout', destroy_user_session_path, method: "delete", class: "nav-link text-black-50" %></li>
             <% end %>
         </li>
     </ul>
   </div>
 </nav>
+
+
