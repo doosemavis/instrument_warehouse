@@ -34,7 +34,9 @@
     float: right; 
 }
 
-div .container {
+div #login-form-border {
+    position: relative;
+    top: 100px;
     text-align: left;
     background-color:#d1d8e0;
     padding-top: 25px;
