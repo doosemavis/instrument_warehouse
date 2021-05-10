@@ -23,7 +23,11 @@
  } */
 
  div .input_field input {
-     width: 100%;
+    width: 100%;
+ }
+
+ div .input_field label {
+    float: right;
  }
 
  div .submit-btn {
@@ -31,15 +35,14 @@
 }
 
 div .container {
-    text-align: center;
+    text-align: left;
     background-color:#d1d8e0;
-    padding-top:25px;
-    padding-bottom:25px;
-    padding-right:25px;
-    padding-left:25px;
-
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
 }
 
 div .remember-me-checkbox {
-    text-align: left;
+    text-align: right;
 }
