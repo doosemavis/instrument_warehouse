@@ -1,8 +1,12 @@
-<h3><%= @instrument.name %></h3>
-<p>Price: <%= @instrument.price %></p>
-<p>Weight: <%= @instrument.weight %></p>
-<p>Description: <%= @instrument.description %></p>
-<p>Category: <%= @instrument.category.name if @instrument.category %></p>
+<div class="container" id="instrument-show">
 
-<%= link_to "Edit Instrument",  edit_instrument_path, class: "btn btn-secondary btn-sm text-white" %>
-<%= link_to "Delete Instrument",  @instrument, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary btn-sm text-white" %>
+    <h3><%= @instrument.name %></h3>
+    <p>Price: $<%= @instrument.price %></p>
+    <p>Weight: <%= @instrument.weight %> lbs.</p>
+    <p>Description: <%= @instrument.description %></p>
+    <p>Category: <%= @instrument.category.name if @instrument.category %></p>
+
+    <%= link_to "Edit Instrument",  edit_instrument_path, class: "btn btn-secondary btn-sm text-black" %>
+    <%= link_to "Delete Instrument",  @instrument, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary btn-sm text-black" %>
+
+</div>

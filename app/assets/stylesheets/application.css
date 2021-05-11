@@ -128,3 +128,30 @@ div #my-instruments:hover a {
     border-radius: 4px;
 }
 
+div #instrument-show {
+    background-color: #ff9933;
+    position: relative;
+    top: 50px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+div #create-edit-form {
+    background-color: #ff9933;
+    position: relative;
+    top: 50px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+div #create-edit-form input {
+    width: 50%;
+}
+
+div #create-instrument-form h3 {
+    border: 2px solid #18A1B7;
+    padding: 2px;
+    margin: 10px;
+}
