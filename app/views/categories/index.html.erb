@@ -1,5 +1,7 @@
 <div class="container" id="my-categories">
+    
     <h4>My Categories </h4>
+
     <div id="my-categories-links">
         <% @categories.each do |c| %>
             <%= link_to c.name, category_instruments_path(c, @instrument) %><br>

@@ -1,23 +1,23 @@
-<div>
+<div class="container" id="my-instruments">
     <% if @category %>
-        <hr>
-        <h2>My <%= @category.name %> Instruments: </h2>
+        <h4>My <%= @category.name %> Instruments: </h4>
     <% else %>
-        <hr>
-        <h2>My Instruments: </h2>
+        <h4>My Instruments </h4>
     <% end %>
 
     <% @instruments.each do |i| %>
         <%= link_to i.name, instrument_path(i) %><br>
     <% end %>
+
     <br>
     <br>
+
     <% if @category %>
-    <%= link_to "Add Instrument",  new_category_instrument_path(@category), class: "btn btn-secondary btn-sm text-white" %>
+        <%= link_to "Add Instrument",  new_category_instrument_path(@category), class: "btn btn-secondary btn-sm text-black" %>
     <% else %>
-        <%= link_to "Add Instrument",  new_instrument_path, class: "btn btn-secondary btn-sm text-white" %>
+        <%= link_to "Add Instrument",  new_instrument_path, class: "btn btn-secondary btn-sm text-black" %>
     <% end %>
 
-    <%= link_to 'Heavy Instruments', '/instruments/search_term/heavy', class: "btn btn-secondary btn-sm text-white" %>
-    <%= link_to 'Expensive Instruments', '/instruments/search_term/expensive', class: "btn btn-secondary btn-sm text-white" %>
+    <%= link_to 'Heavy Instruments', '/instruments/search_term/heavy', class: "btn btn-secondary btn-sm text-black" %>
+    <%= link_to 'Expensive Instruments', '/instruments/search_term/expensive', class: "btn btn-secondary btn-sm text-black" %>
 </div>

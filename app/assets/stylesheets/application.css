@@ -102,3 +102,29 @@ div #my-categories:hover a {
     color: white;
     border-radius: 4px;
 }
+
+div #my-instruments {
+    background-color: #ff9933;
+    position: relative;
+    top: 50px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+div #my-instruments a {
+    position: relative;
+    transition-duration: 0.5s;
+    background-color: #ff9933;
+    color: black;
+    border: 2px solid #18A1B7;
+    padding: 2px;
+    margin: 10px;
+}
+
+div #my-instruments:hover a {
+    background-color: #ff9933;
+    color: white;
+    border-radius: 4px;
+}
+
