@@ -1,7 +1,9 @@
-<%= form_for(@category) do |f| %>
-  
-    <%= f.label "Category" %>
-    <%= f.text_field :name %>
+<div class="container" id="category-names">
+    <%= form_for(@category) do |f| %>
+    
+        <%= f.label "Category" %>
+        <%= f.text_field :name %>
 
-    <%= f.submit @category.persisted? %>
-<% end %>
+        <%= f.submit @category.persisted? %>
+    <% end %>
+</div>
